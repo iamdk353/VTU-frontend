@@ -4,6 +4,7 @@ const SignIn = () => {
   const { loginWithRedirect } = useAuth0();
   return (
     <Button
+      className="w-full"
       onClick={() => {
         loginWithRedirect();
       }}
