@@ -63,8 +63,8 @@ const Profile = () => {
                 { name: Name, notify: Notify },
                 useAuthHeader(token)
               );
-              console.log(res.statusText);
-              if (res.statusText === "OK") {
+              console.log("profile response ", res);
+              if (res.status === 200) {
                 toast.success("Updated Profile");
               }
             } catch (error) {
@@ -82,7 +82,6 @@ const Profile = () => {
             value={Name}
             onChange={(e) => {
               setName(e.target.value);
-              console.log(submit);
               setSubmit(true);
             }}
           ></Input>
