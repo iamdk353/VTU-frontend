@@ -109,7 +109,7 @@ const Profile = () => {
             </label>
           </div>
           {submit && <Button>Submit</Button>}
-          {!submit && <Button disabled={true}>Submit</Button>}
+          {!submit && <Button disabled={true}>Update</Button>}
         </form>
       )}
     </div>
