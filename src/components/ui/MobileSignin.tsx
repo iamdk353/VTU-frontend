@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const MobileSignin = () => {
   const { isVerified } = useUserStore();
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="md:hidden">
