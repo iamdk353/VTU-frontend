@@ -3,14 +3,14 @@ const initialState = {
   image: "",
   isVerified: false,
   isLogin: false,
-  token: "",
+  isLoading: false,
 };
 const userSlice = createSlice({
   name: "userAuth",
   initialState,
   reducers: {
-    setToken: (state, action: PayloadAction<string>) => {
-      state.token = action.payload;
+    setUserLoading: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload;
     },
     setImage: (state, action: PayloadAction<string>) => {
       state.image = action.payload;
@@ -23,6 +23,6 @@ const userSlice = createSlice({
     },
   },
 });
-export const { setImage, setIsVerified, setIsLogin, setToken } =
+export const { setImage, setIsVerified, setIsLogin, setUserLoading } =
   userSlice.actions;
 export default userSlice.reducer;
