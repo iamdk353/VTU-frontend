@@ -14,7 +14,7 @@ const Latest = () => {
         const accessToken = await getAccessTokenSilently();
         setToken(accessToken);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       } finally {
         setLoad(false); // Stop loading regardless of success or failure
       }

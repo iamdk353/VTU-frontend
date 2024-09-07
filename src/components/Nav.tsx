@@ -31,7 +31,7 @@ const Nav = () => {
     async function checkHealth() {
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASEURL}/`);
-        console.log("checking server health");
+        // console.log("checking server health");
         if (res.status === 200) {
           setHealth(true);
           setHelthChecking(false);

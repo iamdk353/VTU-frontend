@@ -33,14 +33,14 @@ const Profile = () => {
             email: string;
           }>
         >(`${import.meta.env.VITE_BASEURL}/user/whoim`, useAuthHeader(token));
-        console.log("response ", res.data);
+        // console.log("response ", res.data);
         setName(res.data.name);
         setNotify(res.data.notify);
         setid(res.data._id);
         setEmail(res.data.email);
         setLoad(false);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         setLoad(false);
       }
     }
@@ -56,19 +56,19 @@ const Profile = () => {
           onSubmit={async (e) => {
             const token = await getAccessTokenSilently();
             e.preventDefault();
-            console.log(Name, Notify, id);
+            // console.log(Name, Notify, id);
             try {
               const res = await axios.patch(
                 `${import.meta.env.VITE_BASEURL}/user/${id}`,
                 { name: Name, notify: Notify },
                 useAuthHeader(token)
               );
-              console.log("profile response ", res);
+              // console.log("profile response ", res);
               if (res.status === 200) {
                 toast.success("Updated Profile");
               }
             } catch (error) {
-              console.log("error  ");
+              // console.log("error  ");
             }
           }}
         >
@@ -98,7 +98,7 @@ const Profile = () => {
               onCheckedChange={(e) => {
                 setNotify(e as boolean);
                 setSubmit(true);
-                console.log(submit);
+                // console.log(submit);
               }}
             />
             <label

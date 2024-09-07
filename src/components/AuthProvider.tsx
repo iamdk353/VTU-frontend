@@ -28,13 +28,13 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             image: user?.picture as string,
             name: user?.given_name as string,
           });
-          console.log(data.msg);
+          // console.log(data.msg);
           dispatch(setImage(data.msg.image));
           dispatch(setIsLogin(true));
           dispatch(setUserLoading(false));
           dispatch(setIsVerified(true));
         } catch (error) {
-          console.log("error");
+          // console.log("error");
         }
       }}
     >
