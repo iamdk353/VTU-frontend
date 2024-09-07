@@ -12,7 +12,7 @@ const Logout = () => {
         variant={"destructive"}
         onClick={() => {
           toast.dismiss("Loging out");
-          logout();
+          logout({ logoutParams: { returnTo: window.location.origin } });
         }}
       >
         Logout
