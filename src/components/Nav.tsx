@@ -15,12 +15,18 @@ import useUserStore from "@/hooks/useUserStore";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const { image, isVerified, isLoading } = useUserStore();
   const navigate = useNavigate();
   const [isHealth, setHealth] = useState(false);
-
+  const [healthChecking, setHelthChecking] = useState(true);
   useEffect(() => {
     async function checkHealth() {
       try {
@@ -28,6 +34,7 @@ const Nav = () => {
         console.log("checking server health");
         if (res.status === 200) {
           setHealth(true);
+          setHelthChecking(false);
           return;
         }
         setHealth(true);
@@ -50,6 +57,20 @@ const Nav = () => {
         >
           VTU NOTIFY
         </Button>
+        {healthChecking && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <Button disabled>Sign In</Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <Button className="" variant={"outline"}>
+                  Server are busy
+                </Button>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
         {isHealth && (
           <>
             <div className="hidden md:flex">
