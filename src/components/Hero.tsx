@@ -1,11 +1,6 @@
 import { Clock10, Mail, MonitorCogIcon, Verified } from "lucide-react";
 import HeroCards from "./ui/HeroCards";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import { toast } from "sonner";
-// import { Button } from "./ui/button";
-// import { useNavigate } from "react-router-dom";
-// import useUserStore from "@/hooks/useUserStore";
+
 const iterator = [
   {
     title: "TRUSTABLE",
