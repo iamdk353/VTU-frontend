@@ -13,13 +13,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import useUserStore from "@/hooks/useUserStore";
-import { Home, Menu } from "lucide-react";
+import { Home, Loader, Menu } from "lucide-react";
 import SignIn from "../signIn";
 import Logout from "../Logout";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const MobileSignin = () => {
-  const { isVerified } = useUserStore();
+  const { isVerified, isLoading } = useUserStore();
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
@@ -45,6 +45,7 @@ const MobileSignin = () => {
                 </SheetTitle>
               )}
             </SheetHeader>
+            {isLoading && <Loader className="animate-spin"></Loader>}
             {isVerified ? (
               <>
                 <Button

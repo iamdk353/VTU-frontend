@@ -9,7 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import MobileSignin from "./ui/MobileSignin";
 import SignIn from "./signIn";
-import { Loader2, User2Icon } from "lucide-react";
+import { Loader2, Menu, User2Icon } from "lucide-react";
 import Logout from "./Logout";
 import useUserStore from "@/hooks/useUserStore";
 import { useEffect, useState } from "react";
@@ -61,7 +61,12 @@ const Nav = () => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <Button disabled>Sign In</Button>
+                <Button disabled className="hidden md:flex">
+                  Sign In
+                </Button>
+                <Button disabled className="md:hidden">
+                  <Menu />
+                </Button>
               </TooltipTrigger>
               <TooltipContent>
                 <Button className="" variant={"outline"}>
