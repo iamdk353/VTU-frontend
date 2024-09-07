@@ -1,5 +1,8 @@
 import { Clock10, Mail, MonitorCogIcon, Verified } from "lucide-react";
 import HeroCards from "./ui/HeroCards";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+// import { toast } from "sonner";
 // import { Button } from "./ui/button";
 // import { useNavigate } from "react-router-dom";
 // import useUserStore from "@/hooks/useUserStore";
@@ -28,6 +31,7 @@ const iterator = [
 const Hero = () => {
   // const navigate = useNavigate();
   // const { isVerified } = useUserStore();
+
   return (
     <div>
       <div className="p-8 w-full min-h-screen flex flex-col items-center space-y-8">

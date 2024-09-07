@@ -1,5 +1,10 @@
 import createUser from "@/DBCalls/postUser";
-import { setImage, setIsLogin, setIsVerified } from "@/slices/userSlice";
+import {
+  setImage,
+  setIsLogin,
+  setIsVerified,
+  setUserLoading,
+} from "@/slices/userSlice";
 import { AppState, Auth0Provider, User } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
 import React from "react";
@@ -15,6 +20,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         audience: "VTU Notify",
       }}
       onRedirectCallback={async (_state?: AppState, user?: User) => {
+        dispatch(setUserLoading(true));
         try {
           const data = await createUser({
             email: user?.email,
@@ -25,6 +31,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           console.log(data.msg);
           dispatch(setImage(data.msg.image));
           dispatch(setIsLogin(true));
+          dispatch(setUserLoading(false));
           dispatch(setIsVerified(true));
         } catch (error) {
           console.log("error");

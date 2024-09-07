@@ -13,7 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import useUserStore from "@/hooks/useUserStore";
-import { Menu } from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import SignIn from "../signIn";
 import Logout from "../Logout";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +35,14 @@ const MobileSignin = () => {
             <SheetHeader>
               {!isVerified && <SheetTitle>Sign in to get started</SheetTitle>}
               {isVerified && (
-                <SheetTitle className="text-left">HELLO {}</SheetTitle>
+                <SheetTitle className="text-left">
+                  <Home
+                    onClick={() => {
+                      setOpen(!open);
+                      navigate("/");
+                    }}
+                  />
+                </SheetTitle>
               )}
             </SheetHeader>
             {isVerified ? (
@@ -52,7 +59,11 @@ const MobileSignin = () => {
                 <Logout />
               </>
             ) : (
-              <SignIn />
+              <SignIn
+                onclick={() => {
+                  setOpen(!open);
+                }}
+              />
             )}
           </SheetContent>
         </SheetOverlay>
