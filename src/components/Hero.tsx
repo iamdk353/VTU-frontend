@@ -1,4 +1,4 @@
-import { Clock10, Mail, MonitorCogIcon, Verified } from "lucide-react";
+import { Clock10, Mail, MonitorCogIcon, Unlink, Verified } from "lucide-react";
 import HeroCards from "./ui/HeroCards";
 
 const iterator = [
@@ -21,6 +21,16 @@ const iterator = [
     title: "MAIL INTEGRATED",
     child: <Mail />,
     desc: "As soon as the web has updated subscribed user will get the regaurding mail",
+  },
+  {
+    title: "ONE TIME SUBSCRIBE",
+    child: <p className="font-bold text-lg">1</p>,
+    desc: "Sign up once and subscribe for the service",
+  },
+  {
+    title: "DISABLE ANY-TIME",
+    child: <Unlink></Unlink>,
+    desc: "to disable the service update your profile info, uncheck the recive notifications",
   },
 ];
 const Hero = () => {

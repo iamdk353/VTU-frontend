@@ -61,7 +61,7 @@ const Nav = () => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <Button disabled className="hidden md:flex">
+                <Button className="hidden md:flex animate-pulse opacity-40">
                   Sign In
                 </Button>
                 <Button disabled className="md:hidden">

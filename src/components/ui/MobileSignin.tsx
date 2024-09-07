@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
 import {
   Sheet,
   // SheetClose,
@@ -45,8 +43,8 @@ const MobileSignin = () => {
                 </SheetTitle>
               )}
             </SheetHeader>
-            {isLoading && <Loader className="animate-spin"></Loader>}
-            {isVerified ? (
+            {isLoading && <Loader className="animate-spin mx-auto"></Loader>}
+            {isVerified && !isLoading ? (
               <>
                 <Button
                   className="w-full"
@@ -60,11 +58,13 @@ const MobileSignin = () => {
                 <Logout />
               </>
             ) : (
-              <SignIn
-                onclick={() => {
-                  setOpen(!open);
-                }}
-              />
+              !isLoading && (
+                <SignIn
+                  onclick={() => {
+                    setOpen(!open);
+                  }}
+                />
+              )
             )}
           </SheetContent>
         </SheetOverlay>

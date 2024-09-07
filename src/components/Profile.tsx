@@ -65,7 +65,7 @@ const Profile = () => {
               );
               // console.log("profile response ", res);
               if (res.status === 200) {
-                toast.success("Updated Profile");
+                toast.success("Profile Updated");
               }
             } catch (error) {
               // console.log("error  ");
