@@ -62,11 +62,7 @@ const Nav = () => {
                   >
                     Profile
                   </Button>
-                  <Logout
-                    onclick={() => {
-                      setOpen(!open);
-                    }}
-                  />
+                  <Logout />
                 </PopoverContent>
               </Popover>
             </div>
