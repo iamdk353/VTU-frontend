@@ -11,7 +11,7 @@ createRoot(document.getElementById("root")!).render(
   <Provider store={AppStore}>
     <AuthProvider>
       <Router>
-        <Toaster richColors position="top-center" closeButton />
+        <Toaster richColors position="top-center" />
         <AppRoutes />
       </Router>
     </AuthProvider>

@@ -56,6 +56,7 @@ const Profile = () => {
           onSubmit={async (e) => {
             const token = await getAccessTokenSilently();
             e.preventDefault();
+            setSubmit(false);
             // console.log(Name, Notify, id);
             try {
               const res = await axios.patch(
@@ -108,7 +109,7 @@ const Profile = () => {
               Recive Notfications
             </label>
           </div>
-          {submit && <Button>Submit</Button>}
+          {submit && <Button>Update</Button>}
           {!submit && <Button disabled={true}>Update</Button>}
         </form>
       )}
