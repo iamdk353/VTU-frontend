@@ -39,7 +39,7 @@ const Nav = () => {
         }
         setHealth(true);
       } catch (error) {
-        toast.error("server side error");
+        toast.error("error in connecting to server");
         setHealth(false);
       }
     }

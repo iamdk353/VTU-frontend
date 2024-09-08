@@ -24,7 +24,7 @@ const iterator = [
   },
   {
     title: "ONE TIME SUBSCRIBE",
-    child: <p className="font-bold text-lg">1</p>,
+    child: <div className="font-bold text-lg">1</div>,
     desc: "Sign up once and subscribe for the service",
   },
   {
